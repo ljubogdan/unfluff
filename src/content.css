@@ -1,0 +1,116 @@
+.uf-hidden {
+  display: none !important;
+}
+
+.uf-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 8px;
+  padding: 7px 8px 7px 12px;
+  border-radius: 10px;
+  background: rgba(13, 148, 136, 0.06);
+  border: 1px solid rgba(13, 148, 136, 0.18);
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 13px;
+  line-height: 1.4;
+  animation: uf-in 0.2s ease-out;
+}
+
+/* The Unfluff mark: three feed lines, fading out */
+.uf-mark {
+  flex: none;
+  width: 14px;
+  height: 12px;
+  background:
+    linear-gradient(#0d9488, #0d9488) 0 0 / 14px 2.5px no-repeat,
+    linear-gradient(rgba(13, 148, 136, 0.55), rgba(13, 148, 136, 0.55)) 0 4.75px / 14px 2.5px no-repeat,
+    linear-gradient(rgba(13, 148, 136, 0.3), rgba(13, 148, 136, 0.3)) 0 9.5px / 8px 2.5px no-repeat;
+}
+
+.uf-reason {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.uf-note {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.uf-bar button {
+  flex: none;
+  padding: 3px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(13, 148, 136, 0.12);
+  color: #0f766e;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.uf-bar button:hover {
+  background: rgba(13, 148, 136, 0.22);
+}
+
+/* Label mode: the post stays, with a small tag above it */
+.uf-bar.uf-label {
+  display: inline-flex;
+  gap: 6px;
+  margin: 0 0 4px;
+  padding: 3px 10px 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.uf-reveal {
+  animation: uf-in 0.25s ease-out;
+}
+
+@keyframes uf-in {
+  from { opacity: 0; transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .uf-bar, .uf-reveal { animation: none; }
+}
+
+/* LinkedIn dark theme */
+.theme--dark .uf-bar {
+  background: rgba(45, 212, 191, 0.08);
+  border-color: rgba(45, 212, 191, 0.22);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.theme--dark .uf-reason {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.theme--dark .uf-mark {
+  filter: brightness(1.6);
+}
+
+.theme--dark .uf-bar button {
+  background: rgba(45, 212, 191, 0.16);
+  color: #5eead4;
+}
+
+/* Page clean-up toggles (classes set on <html> from the popup) */
+.uf-page-premium .premium-upsell-link,
+.uf-page-premium [data-test-premium-upsell],
+.uf-page-premium a[href*="/premium/products"],
+.uf-page-premium a[href*="/premium/survey"] {
+  display: none !important;
+}
+
+.uf-page-sidebar aside.scaffold-layout__aside {
+  display: none !important;
+}
+
+.uf-page-counts .social-details-social-counts {
+  display: none !important;
+}

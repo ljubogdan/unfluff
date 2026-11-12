@@ -1,0 +1,11 @@
+{
+  "name": "unfluff",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser extension that measures and hides the noise in your LinkedIn feed.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node test/rules.test.js",
+    "zip": "zip -r unfluff.zip manifest.json src popup icons LICENSE"
+  }
+}
